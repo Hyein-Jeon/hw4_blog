@@ -1,0 +1,23 @@
+{% extends 'ground.html' %}
+
+{% block content %}
+<div class="mainbox">
+    <h1 class="title">Blog Project</h1> <br>
+    <hr>
+    <div>
+        <a href="{%url 'make'%}">WRITE POST</a>
+    </div>
+    <hr>
+    <div class="box">
+    {% for post in posts %}
+        <div class="posts">
+        <h2>{{ post.post_title }}</h2>
+        <h3>{{ post.post_writer }}</h3>
+        {{ post.summary }} <br>
+        <a href ="{%url 'more' post.id%}">...more</a>
+        <br>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

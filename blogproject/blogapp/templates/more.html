@@ -1,0 +1,19 @@
+{% extends 'ground.html' %}
+
+{% block content %}
+
+<div class="morebox">
+    <h1>{{ post.post_title }}</h1>
+    <hr>
+    <div>
+    Writer__ {{post.post_writer}} <br>
+    Date__ {{post.post_date}}
+    </div>
+    <hr>
+    <p class="postbody">{{post.post_body}}</p>
+    <a href="{% url 'change' post.id %}">UPDATE</a><br><br>
+    <a href="{% url 'remove' post.id %}">DELETE</a>
+</div>
+
+{% endblock %}
+    
